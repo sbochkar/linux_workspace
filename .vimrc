@@ -18,6 +18,11 @@ Plugin 'w0rp/ale'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'heavenshell/vim-pydocstring'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,6 +41,7 @@ set expandtab
 :match ExtraWhitespace /\s\+$/
 noremap <F3> :set invnumber<CR>
 inoremap <F3> <C-O>:set invnumber<CR>
+set nu rnu
 
 nmap <F8> :TagbarToggle<CR>
 let g:ale_completion_enabled = 1
@@ -44,7 +50,7 @@ set hlsearch
 set laststatus=2
 
 set background=dark
-colorscheme elflord
+colorscheme slate
 set colorcolumn=100
 "set tags=./tags,tags;$HOME
 set tags^=./.git/tags
@@ -67,3 +73,5 @@ set noshowmode
 
 let @c = "oimport code; code.interact(local=locals())"
 let @d = "oimport pdb; pdb.set_trace()"
+let g:pydocstring_formatter = 'google'
+let g:goyo_width = 110
